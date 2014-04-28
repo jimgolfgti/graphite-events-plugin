@@ -22,11 +22,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="graphite" />
+        <module name="graphite-events" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="graphite" target="1.5" />
+      <module name="graphite-events" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

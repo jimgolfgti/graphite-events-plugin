@@ -28,6 +28,12 @@
     </developer>
   </developers>
 
+  <scm>
+    <connection>scm:git:ssh://github.com/jimgolfgti/graphite-events-plugin.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/jimgolfgti/graphite-events-plugin.git</developerConnection>
+    <url>https://github.com/jimgolfgti/graphite-events-plugin</url>
+  </scm>
+
   <dependencies>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>

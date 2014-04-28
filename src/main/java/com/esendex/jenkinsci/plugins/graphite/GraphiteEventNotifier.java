@@ -55,7 +55,7 @@ public class GraphiteEventNotifier extends Notifier
         JSONObject postData = generatePostData(build, listener);
 
         final DescriptorImpl descriptor = getDescriptor();
-        URL url = new URL(String.format("%s://%s/events",
+        URL url = new URL(String.format("%s://%s/events/",
                 descriptor.getUseSSL() ? "https" : "http",
                 descriptor.getDefaultHost()));
         listener.getLogger().println("Publishing event to: '" + url.toString() + "' data: '" + postData.toString() + "'");
