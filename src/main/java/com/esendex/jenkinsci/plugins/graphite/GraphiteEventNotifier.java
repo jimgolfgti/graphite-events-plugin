@@ -26,14 +26,16 @@ public class GraphiteEventNotifier extends Notifier
     private final String tags;
     private final String whatTemplate;
     private final String dataTemplate;
+    private final String host;
 
     @DataBoundConstructor
-    public GraphiteEventNotifier(String tags, String whatTemplate, String dataTemplate)
+    public GraphiteEventNotifier(String tags, String whatTemplate, String dataTemplate, String host)
     {
         super();
         this.tags = tags;
         this.whatTemplate = whatTemplate;
         this.dataTemplate = dataTemplate;
+        this.host = host != null && !host.isEmpty() && !host.trim().isEmpty() ? host : null;
     }
 
     public BuildStepMonitor getRequiredMonitorService() {
@@ -48,6 +50,8 @@ public class GraphiteEventNotifier extends Notifier
 
     public String getDataTemplate() { return dataTemplate; }
 
+    public String getHost() { return host; }
+
     @Override
     public boolean perform(AbstractBuild<?, ?> build, Launcher launcher, BuildListener listener) throws InterruptedException, IOException {
         if (build.getResult() != Result.SUCCESS) return true;
@@ -57,7 +61,7 @@ public class GraphiteEventNotifier extends Notifier
         final DescriptorImpl descriptor = getDescriptor();
         URL url = new URL(String.format("%s://%s/events/",
                 descriptor.getUseSSL() ? "https" : "http",
-                descriptor.getDefaultHost()));
+                host == null ? descriptor.getDefaultHost() : expand(build, listener, host)));
         listener.getLogger().println("Publishing event to: '" + url.toString() + "' data: '" + postData.toString() + "'");
 
         try {

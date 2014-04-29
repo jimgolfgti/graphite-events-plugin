@@ -10,6 +10,9 @@
       <f:entry title="Data Template" field="dataTemplate">
         <f:textarea default="${descriptor.defaultDataTemplate()}"/>
       </f:entry>
+      <f:entry title="Graphite Host (optional)" field="host">
+        <f:textbox />
+      </f:entry>
     </f:advanced>
   </f:section>
 </j:jelly>
