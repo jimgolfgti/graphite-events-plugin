@@ -84,7 +84,7 @@ public class GraphiteEventNotifier extends Notifier
 
     private static String expand(AbstractBuild<?, ?> build, BuildListener listener, String template) {
         try {
-            return TokenMacro.expandAll(build, listener, template);
+            return TokenMacro.expandAll(build, listener, template, false, null);
         } catch (MacroEvaluationException mee) {
             throw new RuntimeException(mee);
         } catch (IOException ioe) {
