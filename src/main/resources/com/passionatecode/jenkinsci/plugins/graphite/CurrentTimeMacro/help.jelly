@@ -1,0 +1,7 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core">
+    <dt>$${CURRENT_TIME}</dt>
+    <dd>
+        Expands to the current system time using the default locale.
+    </dd>
+</j:jelly>

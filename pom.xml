@@ -3,10 +3,10 @@
   <parent>
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
-    <version>1.509.4</version>
+    <version>2.11</version>
   </parent>
 
-  <groupId>com.esendex.jenkins-ci.plugins</groupId>
+  <groupId>com.passionatecode.jenkins-ci.plugins</groupId>
   <artifactId>graphite-events</artifactId>
   <name>Graphite Events</name>
   <description>A build status notifier that posts event data to Graphite</description>
@@ -22,11 +22,17 @@
 
   <developers>
     <developer>
-      <id>esendex</id>
-      <name>Esendex</name>
-      <email>development@esendex.com</email>
+      <id>jimgolfgti</id>
+      <name>James Hopper</name>
+      <email>jimgolfgti@gmail.com</email>
     </developer>
   </developers>
+
+  <properties>
+    <jenkins.version>1.609.1</jenkins.version>
+    <java.level>7</java.level>
+    <jenkins-test-harness.version>2.13</jenkins-test-harness.version>
+  </properties>
 
   <scm>
     <connection>scm:git:ssh://github.com/jimgolfgti/graphite-events-plugin.git</connection>

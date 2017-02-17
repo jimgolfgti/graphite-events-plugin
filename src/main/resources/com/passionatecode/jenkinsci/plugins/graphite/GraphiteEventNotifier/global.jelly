@@ -1,0 +1,15 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+  <f:section title="Graphite Event Publisher">
+    <f:entry title="Graphite Host"
+             field="defaultHost"
+             description="Hostname of the Graphite server, can be an IP address and, optionally, specify the port">
+      <f:textbox />
+    </f:entry>
+    <f:entry title="Use SSL"
+             field="useSSL"
+             description="Should the event be posted over HTTPS">
+      <f:checkbox />
+    </f:entry>
+  </f:section>
+</j:jelly>

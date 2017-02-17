@@ -1,6 +1,0 @@
-<j:jelly xmlns:j="jelly:core">
-    <dt>$${VALUE_REGEX,value="VALUE",regex="REGEX"}</dt>
-    <dd>
-        Expands to the element of VALUE matched by REGEX. If no match then expands to the input VALUE.
-    </dd>
-</j:jelly>
